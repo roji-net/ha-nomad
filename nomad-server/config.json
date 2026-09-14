@@ -1,0 +1,45 @@
+{
+  "name": "Nomad Server",
+  "version": "1.0.0",
+  "slug": "nomad-server",
+  "description": "Run a Nomad server inside Home Assistant OS",
+  "url": "https://github.com/roji-net/ha-nomad",
+  "arch": ["aarch64", "amd64"],
+  "startup": "system",
+  "boot": "auto",
+  "init": false,
+  "host_network": true,
+  "ports": {
+    "4646/tcp": 4646,
+    "4647/tcp": 4647,
+    "4648/tcp": 4648
+  },
+  "ports_description": {
+    "4646/tcp": "Nomad HTTP API / UI",
+    "4647/tcp": "Nomad RPC",
+    "4648/tcp": "Nomad Serf"
+  },
+  "map": ["data:rw"],
+  "options": {
+    "node_name": "hass-nomad",
+    "datacenter": "dc1",
+    "region": "global",
+    "bootstrap_expect": 3,
+    "retry_join": "",
+    "bind_addr": "0.0.0.0",
+    "advertise_addr": "",
+    "data_dir": "/data/nomad",
+    "log_level": "INFO"
+  },
+  "schema": {
+    "node_name": "str",
+    "datacenter": "str",
+    "region": "str",
+    "bootstrap_expect": "int",
+    "retry_join": "str",
+    "bind_addr": "str",
+    "advertise_addr": "str",
+    "data_dir": "str",
+    "log_level": "list(TRACE|DEBUG|INFO|WARN|ERROR)"
+  }
+}
