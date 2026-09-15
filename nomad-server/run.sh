@@ -60,7 +60,13 @@ cat >> /etc/nomad/nomad.hcl <<EOF
 server {
   enabled          = true
   bootstrap_expect = ${BOOTSTRAP_EXPECT}
-  retry_join       = [${RETRY_JOIN_LIST}]
+  server_join {
+    retry_join = [${RETRY_JOIN_LIST}]
+  }
+}
+
+consul {
+  enabled = false
 }
 EOF
 
