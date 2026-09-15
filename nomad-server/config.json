@@ -1,6 +1,6 @@
 {
   "name": "Nomad Server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "nomad-server",
   "description": "Run a Nomad server inside Home Assistant OS",
   "url": "https://github.com/roji-net/ha-nomad",
