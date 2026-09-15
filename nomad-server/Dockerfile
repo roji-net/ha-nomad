@@ -2,7 +2,7 @@ ARG BUILD_ARCH=aarch64
 ARG BUILD_FROM=homeassistant/${BUILD_ARCH}-base-debian:bookworm
 FROM ${BUILD_FROM}
 
-ARG NOMAD_VERSION=1.9.5
+ARG NOMAD_VERSION=2.0.6
 ARG BUILD_ARCH
 
 RUN if [ "${BUILD_ARCH}" = "aarch64" ]; then NOMAD_ARCH="arm64"; elif [ "${BUILD_ARCH}" = "amd64" ]; then NOMAD_ARCH="amd64"; else NOMAD_ARCH="${BUILD_ARCH}"; fi && \
