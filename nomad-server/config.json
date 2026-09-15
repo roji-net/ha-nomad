@@ -1,8 +1,8 @@
 {
   "name": "Nomad Server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "slug": "nomad-server",
-  "description": "Run a Nomad server inside Home Assistant OS",
+  "description": "Nomad server node for Home Assistant OS. Joins a HashiCorp Nomad cluster as a voting member. Configure node IP and other server IPs from the HASS UI.",
   "url": "https://github.com/roji-net/ha-nomad",
   "arch": ["aarch64", "amd64"],
   "startup": "system",
